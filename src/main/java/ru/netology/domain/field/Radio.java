@@ -1,7 +1,27 @@
+package ru.netology.domain.field;
 public class Radio {
-
+    public int minNumber = 0;
+    public int maxNumber = 10;
     public int currentNumber;
     public int currentVolume;
+
+    public int getMaxNumber() {
+        return maxNumber;
+    }
+    public int getMinNumber() {
+        return minNumber;
+    }
+
+    public Radio(int maxNumber, int minNumber) {
+        this.maxNumber = maxNumber;
+        this.minNumber = minNumber;
+        this.currentNumber = minNumber;
+    }
+    public Radio(int sizeNumber) {
+        maxNumber = minNumber + sizeNumber;
+    }
+    public Radio() {
+    }
 
     public int getCurrentNumber() {
         return currentNumber;
@@ -12,7 +32,7 @@ public class Radio {
     }
 
     public void setCurrentVolume(int newCurrentVolume) {
-        if (newCurrentVolume > 9) {
+        if (newCurrentVolume > 100) {
             return;
         }
         if (newCurrentVolume < 0) {
@@ -22,17 +42,17 @@ public class Radio {
     }
 
     public void setCurrentNumber(int newCurrentNumber) {
-        if (newCurrentNumber > 10) {
-            return;
+        if (newCurrentNumber > maxNumber) {
+            newCurrentNumber = minNumber;
         }
         if (newCurrentNumber < 0) {
-            return;
+            newCurrentNumber = maxNumber;
         }
         currentNumber = newCurrentNumber;
     }
 
     public void increaseNumber() {
-        if (currentNumber < 9) {
+        if (currentNumber < maxNumber) {
             currentNumber = currentNumber + 1;
         }
     }
@@ -44,7 +64,7 @@ public class Radio {
     }
 
     public void increaseVolume() {
-        if (currentVolume < 10) {
+        if (currentVolume < 100) {
             currentVolume = currentVolume + 1;
         }
     }
@@ -54,4 +74,6 @@ public class Radio {
             currentVolume = currentVolume - 1;
         }
     }
+
+
 }
