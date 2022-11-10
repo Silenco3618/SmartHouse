@@ -1,26 +1,23 @@
 package ru.netology.domain.field;
 public class Radio {
-    public int minNumber = 0;
-    public int maxNumber = 10;
-    public int currentNumber;
-    public int currentVolume;
+    private int minNumber = 0;
+    private int maxNumber = 10;
+
+    private int currentNumber;
+    private int currentVolume;
+
+    public Radio() {
+    }
+
+    public Radio(int sizeNumber) {
+        maxNumber = minNumber + sizeNumber;
+    }
 
     public int getMaxNumber() {
         return maxNumber;
     }
     public int getMinNumber() {
         return minNumber;
-    }
-
-    public Radio(int maxNumber, int minNumber) {
-        this.maxNumber = maxNumber;
-        this.minNumber = minNumber;
-        this.currentNumber = minNumber;
-    }
-    public Radio(int sizeNumber) {
-        maxNumber = minNumber + sizeNumber;
-    }
-    public Radio() {
     }
 
     public int getCurrentNumber() {

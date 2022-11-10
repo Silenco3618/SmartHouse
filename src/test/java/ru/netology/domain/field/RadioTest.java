@@ -8,6 +8,7 @@ class RadioTest {
     @Test
     public void mustSizeNumber() {
         Radio cond = new Radio(20);
+
         Assertions.assertEquals(0, cond.getMinNumber());
         Assertions.assertEquals(20, cond.getMaxNumber());
         Assertions.assertEquals(0, cond.getCurrentNumber());
