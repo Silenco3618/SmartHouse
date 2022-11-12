@@ -3,6 +3,8 @@ public class Radio {
     public int currentNumber;
     public int currentVolume;
 
+
+
     public int getCurrentNumber() {
         return currentNumber;
     }
@@ -18,7 +20,7 @@ public class Radio {
         if (newCurrentVolume < 0) {
             return;
         }
-        currentVolume = newCurrentVolume;
+        this.currentVolume = newCurrentVolume;
     }
 
     public void setCurrentNumber(int newCurrentNumber) {
@@ -28,7 +30,7 @@ public class Radio {
         if (newCurrentNumber < 0) {
             return;
         }
-        currentNumber = newCurrentNumber;
+        this.currentNumber = newCurrentNumber;
     }
 
     public void increaseNumber() {
