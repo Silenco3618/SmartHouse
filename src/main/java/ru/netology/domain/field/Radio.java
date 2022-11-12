@@ -1,12 +1,13 @@
 package ru.netology.domain.field;
 public class Radio {
-    private int minNumber = 0;
-    private int maxNumber = 10;
+    private int minNumber;
+    private int maxNumber;
 
     private int currentNumber;
     private int currentVolume;
 
     public Radio() {
+        maxNumber = 10;
     }
 
     public Radio(int sizeNumber) {
@@ -35,7 +36,7 @@ public class Radio {
         if (newCurrentVolume < 0) {
             return;
         }
-        currentVolume = newCurrentVolume;
+        this.currentVolume = newCurrentVolume;
     }
 
     public void setCurrentNumber(int newCurrentNumber) {
@@ -45,7 +46,7 @@ public class Radio {
         if (newCurrentNumber < 0) {
             newCurrentNumber = maxNumber;
         }
-        currentNumber = newCurrentNumber;
+        this.currentNumber = newCurrentNumber;
     }
 
     public void increaseNumber() {
